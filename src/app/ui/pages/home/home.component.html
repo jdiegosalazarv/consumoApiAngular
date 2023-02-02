@@ -1,0 +1,10 @@
+<app-nabvar (newItemEvent)="addItem($event)"></app-nabvar>
+<select [(ngModel)]="tipo">
+  <option value="bird">Bird</option>
+  <option value="counrty">Country</option>
+  <option value="zone">Zone</option>
+</select>
+
+<div *ngIf="opcion == 'agregar' ">
+  <app-guardar [entidad]="tipo"></app-guardar>
+</div>
