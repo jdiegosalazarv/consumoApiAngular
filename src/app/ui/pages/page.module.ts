@@ -8,22 +8,26 @@ import { CountryService } from 'src/app/infrastructure/diven-adapter/country/cou
 import { ZoneGateway } from 'src/app/domain/models/zone/gateway/zone.gateway';
 import { ZoneService } from 'src/app/infrastructure/diven-adapter/zone/zone.service';
 import { DomainModule } from '../../domain/domain.module';
-import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { BirdsComponent } from './birds/birds.component';
+import { ZonesComponent } from './zones/zones.component';
+import { CountriesComponent } from './countries/countries.component';
 
 
 
 @NgModule({
   declarations: [
-    HomeComponent
+    BirdsComponent,
+    ZonesComponent,
+    CountriesComponent
   ],
   imports: [
     CommonModule,
     ComponentsModule,
     DomainModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [
     {provide: BirdGateway, useClass: BirdService},
@@ -31,7 +35,9 @@ import { FormsModule } from '@angular/forms';
     {provide: ZoneGateway, useClass: ZoneService}
   ],
   exports: [
-    HomeComponent
+    BirdsComponent,
+    ZonesComponent,
+    CountriesComponent
   ]
 })
 export class PageModule { }

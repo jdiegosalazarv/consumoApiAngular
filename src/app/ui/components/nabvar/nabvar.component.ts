@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-nabvar',
@@ -7,18 +7,9 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class NabvarComponent implements OnInit {
 
-  opcion: string = "lista";
-
-  @Output() newItemEvent = new EventEmitter<string>();
-
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  menu(param: string): void{
-    this.opcion = param;
-    this.newItemEvent.emit(this.opcion);
   }
 
 }
