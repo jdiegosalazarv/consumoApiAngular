@@ -4,13 +4,15 @@ import { FormsModule } from '@angular/forms';
 import { NabvarComponent } from './nabvar/nabvar.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { ListaBirdsComponent } from './lista-birds/lista-birds.component';
+import { AddBirdComponent } from './lista-birds/add-bird/add-bird.component';
 
 
 
 @NgModule({
   declarations: [
     NabvarComponent,
-    ListaBirdsComponent
+    ListaBirdsComponent,
+    AddBirdComponent
   ],
   imports: [
     CommonModule,

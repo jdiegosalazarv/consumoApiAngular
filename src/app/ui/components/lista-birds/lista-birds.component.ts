@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { IBirdModel } from 'src/app/domain/models/bird/bird.model';
 import { BirdUseCase } from 'src/app/domain/usecase/bird.usecase';
 import Swal from 'sweetalert2'
 
@@ -9,7 +10,7 @@ import Swal from 'sweetalert2'
 })
 export class ListaBirdsComponent implements OnInit {
 
-  @Input() lista: any[];
+  @Input() lista: IBirdModel[];
   option: boolean = false;
 
   constructor(private birdUseCase: BirdUseCase) { }
@@ -38,5 +39,9 @@ export class ListaBirdsComponent implements OnInit {
 
   async edit(id: number) {
     await this.birdUseCase.findBirdById(id)
+  }
+
+  setOption(opt: boolean){
+    this.option = opt;
   }
 }

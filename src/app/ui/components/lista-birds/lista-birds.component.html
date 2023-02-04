@@ -1,22 +1,29 @@
-<div class="container">
-  <div>
-    <button class='btn btn-primary' (click)="agregar()">Agregar</button>
+<div class="container" [ngSwitch]="option">
+
+  <div *ngSwitchCase="false">
+    <div>
+      <button class='btn btn-primary' (click)="agregar()">Agregar</button>
+    </div>
+    <table class="table table-hover">
+      <tbody *ngFor="let item of lista">
+        <tr>
+          <th scope="row">{{ item.id }}</th>
+          <td>{{ item.commonName }}</td>
+          <td>{{ item.scientificName }}</td>
+          <td>
+            <a class="button" (click)="delete(item.id)">
+              <span class="material-symbols-outlined"> delete </span>
+            </a>
+            <a class="button" (click)="edit(item.id)">
+              <span class="material-symbols-outlined"> edit </span>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-  <table class="table table-hover">
-    <tbody *ngFor="let item of lista">
-      <tr>
-        <th scope="row">{{ item.id }}</th>
-        <td>{{ item.commonName }}</td>
-        <td>{{ item.scientificName }}</td>
-        <td>
-          <a class="button" (click)="delete(item.id)">
-            <span class="material-symbols-outlined"> delete </span>
-          </a>
-          <a class="button" (click)="edit(item.id)">
-            <span class="material-symbols-outlined"> edit </span>
-          </a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div *ngSwitchCase="true">
+    <app-add-bird (option)="setOption($event)"></app-add-bird>
+  </div>
+
 </div>
