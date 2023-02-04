@@ -13,16 +13,16 @@ export class BirdsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  listaBirds: IBirdModel[] = [{
-    id: 1,
-    commonName: "pajaro",
-    scientificName: "string"
-  },
-  {
-    id: 2,
-    commonName: "pajaro2",
-    scientificName: "string2"
-  }
-  ]
+  // listaBirds: IBirdModel[] = [{
+  //   id: 1,
+  //   commonName: "pajaro",
+  //   scientificName: "string"
+  // },
+  // {
+  //   id: 2,
+  //   commonName: "pajaro2",
+  //   scientificName: "string2"
+  // }
+  // ]
 
 }

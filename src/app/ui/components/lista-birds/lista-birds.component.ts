@@ -10,17 +10,25 @@ import Swal from 'sweetalert2'
 })
 export class ListaBirdsComponent implements OnInit {
 
-  @Input() lista: IBirdModel[];
+  // @Input() lista: IBirdModel[];
+  lista: any = [];
   option: boolean = false;
 
   constructor(private birdUseCase: BirdUseCase) { }
 
   ngOnInit(): void {
-
+    this.showList();
   }
 
   agregar(){
     this.option = true;
+    console.log(this.lista);
+  }
+
+  showList(){
+    this.birdUseCase.findBirds().subscribe(result => {
+      this.lista = result}
+      );
   }
 
   async delete(id: number) {
