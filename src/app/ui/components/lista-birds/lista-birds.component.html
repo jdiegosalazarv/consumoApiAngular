@@ -11,11 +11,11 @@
           <td>{{ item.commonName }}</td>
           <td>{{ item.scientificName }}</td>
           <td>
-            <a class="button" (click)="delete(item.id)">
-              <span class="material-symbols-outlined"> delete </span>
-            </a>
             <a class="button" (click)="edit(item.id)">
               <span class="material-symbols-outlined"> edit </span>
+            </a>
+            <a class="button" (click)="delete(item.id)">
+              <span class="material-symbols-outlined"> delete </span>
             </a>
           </td>
         </tr>
@@ -23,7 +23,7 @@
     </table>
   </div>
   <div *ngSwitchCase="true">
-    <app-add-bird (option)="setOption($event)"></app-add-bird>
+    <app-add-bird (option)="setOption($event)" [bird]="currentBird"></app-add-bird>
   </div>
 
 </div>

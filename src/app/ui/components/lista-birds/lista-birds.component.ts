@@ -11,7 +11,8 @@ import Swal from 'sweetalert2'
 export class ListaBirdsComponent implements OnInit {
 
   // @Input() lista: IBirdModel[];
-  lista: any = [];
+  lista: IBirdModel[] | null = [];
+  currentBird: IBirdModel | null;
   option: boolean = false;
 
   constructor(private birdUseCase: BirdUseCase) { }
@@ -25,10 +26,10 @@ export class ListaBirdsComponent implements OnInit {
     console.log(this.lista);
   }
 
-  showList(){
-    this.birdUseCase.findBirds().subscribe(result => {
-      this.lista = result}
-      );
+  async showList(){
+    await this.birdUseCase.findBirds().subscribe(result => {
+      this.lista = result
+    });
   }
 
   async delete(id: number) {
@@ -41,15 +42,20 @@ export class ListaBirdsComponent implements OnInit {
           showConfirmButton: false,
           timer: 1500
         });
+        this.showList();
       }
     )
   }
 
   async edit(id: number) {
-    await this.birdUseCase.findBirdById(id)
+    this.option = true;
+    await this.birdUseCase.findBirdById(id).subscribe(result => {
+      this.currentBird = result;
+    });
   }
 
-  setOption(opt: boolean){
+  async setOption(opt: boolean){
+    await this.showList();
     this.option = opt;
   }
 }
