@@ -23,7 +23,6 @@ export class ListaBirdsComponent implements OnInit {
 
   agregar(){
     this.option = true;
-    console.log(this.lista);
   }
 
   async showList(){

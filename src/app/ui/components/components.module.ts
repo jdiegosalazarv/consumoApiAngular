@@ -5,6 +5,10 @@ import { NabvarComponent } from './nabvar/nabvar.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { ListaBirdsComponent } from './lista-birds/lista-birds.component';
 import { AddBirdComponent } from './lista-birds/add-bird/add-bird.component';
+import { ListaCountriesComponent } from './lista-countries/lista-countries.component';
+import { AddContryComponent } from './lista-countries/add-contry/add-contry.component';
+import { ListaZonesComponent } from './lista-zones/lista-zones.component';
+import { AddZoneComponent } from './lista-zones/add-zone/add-zone.component';
 
 
 
@@ -12,7 +16,11 @@ import { AddBirdComponent } from './lista-birds/add-bird/add-bird.component';
   declarations: [
     NabvarComponent,
     ListaBirdsComponent,
-    AddBirdComponent
+    AddBirdComponent,
+    ListaCountriesComponent,
+    AddContryComponent,
+    ListaZonesComponent,
+    AddZoneComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +29,9 @@ import { AddBirdComponent } from './lista-birds/add-bird/add-bird.component';
   ],
   exports: [
     NabvarComponent,
-    ListaBirdsComponent
+    ListaBirdsComponent,
+    ListaCountriesComponent,
+    ListaZonesComponent
   ]
 })
 export class ComponentsModule { }

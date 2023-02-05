@@ -37,7 +37,7 @@ export class AddBirdComponent implements OnInit {
   @Input()
   set bird(item: IBirdRequest | null) {
     if (item != null) {
-      //@ts-ignore
+      // @ts-ignore
       this.id = item.id;
       this.name = item.commonName;
       //@ts-ignore
